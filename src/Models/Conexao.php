@@ -18,7 +18,7 @@ class Conexao {
     
     public static function getInstance() {
         if (!self::$instance) {
-            self::$instance = new Database();
+            self::$instance = new Conexao();
         }
         return self::$instance;
     }
@@ -26,5 +26,4 @@ class Conexao {
     public function getConnection() {
         return $this->connection;
     }
-    
 }
