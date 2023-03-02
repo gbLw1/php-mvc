@@ -1,52 +1,29 @@
 <?php
 
-class Controller
-{
-    private $model;
+require_once('model/AlunoModel.php');
 
-    public function __construct()
-    {
-        $this->model = Model::getInstance();
+class AlunoController {
+    private $alunoModel;
+
+    public function __construct() {
+        $this->userModel = new AlunoModel();
     }
 
-    public function index()
-    {
-        $students = $this->model->getAllStudents();
-        include 'views/list.php';
-    }
-    public function add()
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $name = $_POST['name'];
-            $email = $_POST['email'];
-            $phone = $_POST['phone'];
-            $this->model->addStudent($name, $email, $phone);
-            header('Location: index.php');
-            exit;
-        } else {
-            include 'views/add.php';
-        }
+    public function create($alunoData) {
+        $this->alunoModel->setAttribute('name', $userData['name']);
+        $this->alunoModel->setAttribute('email', $userData['email']);
+        $this->alunoModel->setAttribute('phone', $userData['phone']);
+        $this->alunoModel->save();
+
+        // redireciona para página de listagem de usuários
+        header('Location: /users/list');
     }
 
-    public function edit($id)
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $name = $_POST['name'];
-            $email = $_POST['email'];
-            $phone = $_POST['phone'];
-            $this->model->updateStudent($id, $name, $email, $phone);
-            header('Location: index.php');
-            exit;
-        } else {
-            $student = $this->model->getStudentById($id);
-            include 'views/edit.php';
-        }
-    }
+    public function list() {
+        // recupera todos os usuários do banco de dados
+        $alunos = $this->alunoModel->getAllAttributes();
 
-    public function delete($id)
-    {
-        $this->model->deleteStudent($id);
-        header('Location: index.php');
-        exit;
+        // carrega a view de listagem de usuários
+        require_once('view/aluno/list.php');
     }
 }
