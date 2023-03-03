@@ -48,7 +48,7 @@ class Postagem
 		if (!$resultado) {
 			throw new Exception("Não foi encontrado nenhum registro no banco");
 		} else {
-			$resultado->comentarios = Comentario::selecionarComentarios($resultado->id);
+			//$resultado->comentarios = Comentario::selecionarComentarios($resultado->id);
 		}
 
 		return $resultado;

@@ -36,8 +36,6 @@ class Core
 			$id = null;
 		}
 
-		// call_user_func_array(array(new $controller, $acao), array('id' => $id));
-		call_user_func_array(array(new $controller, $acao), array());
-
+		call_user_func_array(array(new $controller, $acao), array($id));
 	}
 }

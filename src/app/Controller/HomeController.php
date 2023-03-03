@@ -19,8 +19,6 @@
 
 				// $conteudo = $template->render($parametros);
 				// echo $conteudo;
-
-				
 				
 			} catch (Exception $e) {
 				echo $e->getMessage();
