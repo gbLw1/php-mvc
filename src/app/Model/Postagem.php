@@ -58,8 +58,6 @@ class Postagem
 	{
 		if (empty($dadosPost['titulo']) or empty($dadosPost['conteudo'])) {
 			throw new Exception("Preencha todos os campos");
-
-			return false;
 		}
 
 		$con = Connection::getConn();
@@ -71,8 +69,6 @@ class Postagem
 
 		if ($res == 0) {
 			throw new Exception("Falha ao inserir publicação");
-
-			return false;
 		}
 
 		return true;
