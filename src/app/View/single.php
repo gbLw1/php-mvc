@@ -24,6 +24,15 @@
 			<br><br>
 
 			<!-- TODO: Carregar os comentários abaixo -->
+			<?php if ($postagem->comentarios == false): ?>
+				<p>Nenhum comentário encontrado para essa postagem</p>
+			<?php else: ?>
+				<?php foreach ($postagem->comentarios as $coment): ?>
+					<h3><?php echo $coment->nome ?></h3>
+					<p><?php echo $coment->mensagem ?></p>
+					<br>
+				<?php endforeach ?>
+			<?php endif ?>
 
 		</article>
 
