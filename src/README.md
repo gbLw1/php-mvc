@@ -1,6 +1,4 @@
-# Blog em php
-
-## Setup Banco
+# Setup Banco de dados
 
 **Nome do banco**:
 exemplo
