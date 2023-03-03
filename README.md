@@ -2,7 +2,7 @@
 
 ## Progresso do desenvolvimento
 
-### Postagens (Endpoint + integração tela)
+### Postagens (Endpoints + integração tela)
 
 - [x] GET ~/postagens
 - [x] GET ~/postagens/{id}
@@ -10,15 +10,27 @@
 
 ---
 
-### Comentários (Endpoint + integração tela)
+### Comentários (Endpoints + integração tela)
 
 - [x] GET ~/comentarios
 - [ ] POST ~/comentarios
 
 ---
 
-### Administrativo (Endpoint + integração tela)
+### Administrativo (Endpoints + integração tela)
 
 - [ ] POST ~/postagens/
 - [ ] PUT ~/postagens/{id}
 - [ ] DELETE ~/postagens/{id}
+
+---
+
+### Sobre (Tela)
+
+- [x] Página Sobre
+
+---
+
+### Tratamento de erro (Controller + tela)
+
+- [ ] 404 - NotFound

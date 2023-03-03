@@ -10,7 +10,7 @@
 			<hr>
 			<br>
 
-			<form method="post" action="http://localhost/PROJS/VIDEO_AULAS/SERIE/02_PHP+MVC+CRUD/?pagina=post&metodo=addComent">
+			<form method="post" action="http://localhost/teste/?pagina=post&metodo=addComent">
 				<span>Nome:</span><br>
 				<input type="text" name="nome"><br><br>
 
