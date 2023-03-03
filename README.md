@@ -25,7 +25,7 @@ Design Patterns utilizados:
 
 ### Administrativo (Endpoints + integração tela)
 
-- [ ] POST ~/postagens/
+- [x] POST ~/postagens
 - [ ] PUT ~/postagens/{id}
 - [ ] DELETE ~/postagens/{id}
 
