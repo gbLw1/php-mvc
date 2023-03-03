@@ -1,5 +1,11 @@
 # Blog em php
 
+Design Patterns utilizados:
+
+- [x] MVC
+- [x] Singleton
+- [ ] Composite
+
 ## Progresso do desenvolvimento
 
 ### Postagens (Endpoints + integração tela)
