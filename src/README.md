@@ -15,4 +15,7 @@ exemplo
 
 2. comentario
 
-    -
+    - id -> int (11)
+    - nome -> varchar(200)
+    - mensagem -> text
+    - id_postagem -> int (11)
