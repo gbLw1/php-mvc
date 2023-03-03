@@ -16,7 +16,7 @@ require_once 'app/Model/Postagem.php';
 require_once 'app/Model/Comentario.php';
 
 
-require_once 'vendor/autoload.php';
+// require_once 'vendor/autoload.php';
 
 
 // carrega o template padrão assim que entra na index

@@ -7,17 +7,18 @@
 			try {
 				$colecPostagens = Postagem::selecionaTodos();
 
+				require_once("app/View/home.php");
 
-				$loader = new \Twig\Loader\FilesystemLoader('app/View');
-				$twig = new \Twig\Environment($loader);
-				$template = $twig->load('home.html');
+				// $loader = new \Twig\Loader\FilesystemLoader('app/View');
+				// $twig = new \Twig\Environment($loader);
+				// $template = $twig->load('home.html');
 
-				$parametros = array();
-				$parametros['postagens'] = $colecPostagens;
-				//var_dump($colecPostagens);
+				// $parametros = array();
+				// $parametros['postagens'] = $colecPostagens;
+				// //var_dump($colecPostagens);
 
-				$conteudo = $template->render($parametros);
-				echo $conteudo;
+				// $conteudo = $template->render($parametros);
+				// echo $conteudo;
 
 				
 				
