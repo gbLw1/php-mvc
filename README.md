@@ -4,7 +4,7 @@ Design Patterns utilizados:
 
 - [x] MVC
 - [x] Singleton
-- [ ] Composite
+- [x] Composite
 
 ## Progresso do desenvolvimento
 

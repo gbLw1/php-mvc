@@ -10,8 +10,30 @@ class AdminController
 			require_once "app/View/admin.php";
 
 		} catch (Exception $e) {
-			echo $e->getMessage();
+
+			// Implementação do composite pattern utilizado de exemplo
+			// Ao estourar uma exception, permite criar componentes (tags) na tela
+			// E aproveitando para exibir a mensagem da exception de forma customizada.
+
+			// criação do título (h1)
+			$title = new TitleComponent();
+			$title->addText("Gerenciador de Conteúdo");
+
+			// criação do link de redirecionamento
+			$link = new LinkComponent();
+			$link->addRedirectLink("?pagina=admin&metodo=create");
+			$link->addText("Criar publicação");
+
+			$exHandler = new ExceptionHandlerComponent();
+			$exHandler->handleException($e);
+			$exHandler->addTag($title->display());
+			$exHandler->addTag($link->display());
+			$exHandler->addTag("<br><br><hr><br>");
+			$exHandler->display();
 		}
+
+		
+		/* --------------------------- ↓ Composer - Twig ↓ -------------------------- */
 
 		// 	$loader = new \Twig\Loader\FilesystemLoader('app/View');
 		// 	$twig = new \Twig\Environment($loader);
@@ -29,6 +51,9 @@ class AdminController
 	public function create()
 	{
 		require_once "app/View/create.html";
+
+		
+		/* --------------------------- ↓ Composer - Twig ↓ -------------------------- */
 
 		// $loader = new \Twig\Loader\FilesystemLoader('app/View');
 		// $twig = new \Twig\Environment($loader);
@@ -59,6 +84,9 @@ class AdminController
 		$post = Postagem::selecionaPorId($paramId);
 
 		require_once("app/View/update.php");
+
+		
+		/* --------------------------- ↓ Composer - Twig ↓ -------------------------- */
 
 		// $loader = new \Twig\Loader\FilesystemLoader('app/View');
 		// $twig = new \Twig\Environment($loader);

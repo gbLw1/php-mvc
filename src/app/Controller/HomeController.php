@@ -9,6 +9,9 @@ class HomeController
 
 			require_once("app/View/home.php");
 
+
+			/* --------------------------- ↓ Composer - Twig ↓ -------------------------- */
+
 			// $loader = new \Twig\Loader\FilesystemLoader('app/View');
 			// $twig = new \Twig\Environment($loader);
 			// $template = $twig->load('home.html');
