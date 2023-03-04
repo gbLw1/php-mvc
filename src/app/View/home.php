@@ -7,7 +7,7 @@
 		echo "<article>";
 			echo "<header>";
 				echo "<h2>";
-					echo "<a href='http://localhost/teste/?pagina=post&id=" . $postagem->id . "'>";
+					echo "<a href='?pagina=post&id=" . $postagem->id . "'>";
 						echo $postagem->titulo;
 					echo "</a>";
 				echo "</h2>";

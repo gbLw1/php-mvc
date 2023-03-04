@@ -16,18 +16,21 @@ class AdminController
 			// E aproveitando para exibir a mensagem da exception de forma customizada.
 
 			// criação do título (h1)
-			$title = new TitleComponent();
-			$title->addText("Gerenciador de Conteúdo");
+			$title = new TitleComponent("Gerenciador de Conteúdo");
 
 			// criação do link de redirecionamento
-			$link = new LinkComponent();
-			$link->addRedirectLink("?pagina=admin&metodo=create");
-			$link->addText("Criar publicação");
+			$link = new LinkComponent(
+				linkRedirect: "?pagina=admin&metodo=create",
+				text: "Criar publicação");
 
-			$exHandler = new ExceptionHandlerComponent();
+			$exHandler = new ExceptionHandlerComponent(
+				tags: array(
+					$title->display(),
+					$link->display()
+				)
+			);
+
 			$exHandler->handleException($e);
-			$exHandler->addTag($title->display());
-			$exHandler->addTag($link->display());
 			$exHandler->addTag("<br><br><hr><br>");
 			$exHandler->display();
 		}
@@ -71,10 +74,10 @@ class AdminController
 			Postagem::insert($_POST);
 
 			echo '<script>alert("Publicação inserida com sucesso!");</script>';
-			echo '<script>location.href="http://localhost/teste/?pagina=admin&metodo=index"</script>';
+			echo '<script>location.href="?pagina=admin&metodo=index"</script>';
 		} catch (Exception $e) {
 			echo '<script>alert("' . $e->getMessage() . '");</script>';
-			echo '<script>location.href="http://localhost/teste/?pagina=admin&metodo=create"</script>';
+			echo '<script>location.href="?pagina=admin&metodo=create"</script>';
 		}
 
 	}
@@ -109,10 +112,10 @@ class AdminController
 			Postagem::update($_POST);
 
 			echo '<script>alert("Publicação alterada com sucesso!");</script>';
-			echo '<script>location.href="http://localhost/teste/?pagina=admin&metodo=index"</script>';
+			echo '<script>location.href="?pagina=admin&metodo=index"</script>';
 		} catch (Exception $e) {
 			echo '<script>alert("' . $e->getMessage() . '");</script>';
-			echo '<script>location.href="http://localhost/teste/?pagina=admin&metodo=change&id=' . $_POST['id'] . '"</script>';
+			echo '<script>location.href="?pagina=admin&metodo=change&id=' . $_POST['id'] . '"</script>';
 		}
 	}
 
@@ -122,10 +125,10 @@ class AdminController
 			Postagem::delete($paramId);
 
 			echo '<script>alert("Publicação deletada com sucesso!");</script>';
-			echo '<script>location.href="http://localhost/teste/?pagina=admin&metodo=index"</script>';
+			echo '<script>location.href="?pagina=admin&metodo=index"</script>';
 		} catch (Exception $e) {
 			echo '<script>alert("' . $e->getMessage() . '");</script>';
-			echo '<script>location.href="http://localhost/teste/?pagina=admin&metodo=index"</script>';
+			echo '<script>location.href="?pagina=admin&metodo=index"</script>';
 		}
 
 	}

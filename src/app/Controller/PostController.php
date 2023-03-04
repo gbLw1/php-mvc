@@ -36,10 +36,10 @@ class PostController
 		try {
 			Comentario::inserir($_POST);
 
-			header('Location: /teste/?pagina=post&id=' . $_POST['id']);
+			header('Location: ?pagina=post&id=' . $_POST['id']);
 		} catch (Exception $e) {
 			echo '<script>alert("' . $e->getMessage() . '");</script>';
-			echo '<script>location.href="http://localhost/teste/?pagina=post&id=' . $_POST['id'] . '"</script>';
+			echo '<script>location.href="http://localhost?pagina=post&id=' . $_POST['id'] . '"</script>';
 		}
 
 	}

@@ -15,20 +15,22 @@ atribuidos nos métodos addText(str) e addRedirectLink(str).
 
 class LinkComponent implements Component
 {
-    private string $linkText = "Link";
-    private string $linkRedirect = "#";
+    public function __construct(
+        private string $text = "",
+        private string $linkRedirect = "")
+    { }
 
     public function display()
     {
-        echo "<a href=" . $this->linkRedirect . ">" . $this->linkText . "</a>";
+        echo "<a href=" . $this->linkRedirect . ">" . $this->text . "</a>";
     }
 
-    public function addText(string $text)
+    public function setText(string $text)
     {
-        $this->linkText = $text;
+        $this->text = $text;
     }
 
-    public function addRedirectLink(string $link)
+    public function setRedirectLink(string $link)
     {
         $this->linkRedirect = $link;
     }

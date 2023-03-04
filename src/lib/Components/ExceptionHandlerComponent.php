@@ -21,7 +21,9 @@ class ExceptionHandlerComponent implements Component
 {
     // o array tags armazenará toda a estrutura do componente
     // criando assim um html customizado para exibição da exception
-    private $tags = array();
+    public function __construct(
+        private $tags = array())
+    { }
 
     private string $exceptionMessage = "";
 

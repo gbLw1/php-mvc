@@ -1,6 +1,6 @@
 <h1>Gerenciador de Conteúdo</h1>
 
-<a href="http://localhost/teste/?pagina=admin&metodo=create">Criar Publicação</a><br><br>
+<a href="?pagina=admin&metodo=create">Criar Publicação</a><br><br>
 <hr>
 <br>
 <table border="2">
@@ -19,8 +19,8 @@
 			<th>
 				<?php echo $postagem->titulo ?>
 			</th>
-			<th><a href="http://localhost/teste/?pagina=admin&metodo=change&id=<?php echo $postagem->id ?>">Alterar</a></th>
-			<th><a href="http://localhost/teste/?pagina=admin&metodo=delete&id=<?php echo $postagem->id ?>">Deletar</a></th>
+			<th><a href="?pagina=admin&metodo=change&id=<?php echo $postagem->id ?>">Alterar</a></th>
+			<th><a href="?pagina=admin&metodo=delete&id=<?php echo $postagem->id ?>">Deletar</a></th>
 		</tr>
 	<?php endforeach ?>
 

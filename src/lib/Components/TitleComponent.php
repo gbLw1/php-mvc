@@ -14,14 +14,16 @@ criando um título para página com a tag html <h1>
 
 class TitleComponent implements Component
 {
-    private string $text = "";
+    public function __construct(
+        private string $text = "")
+    { }
 
     public function display()
     {
         echo "<h1>" . $this->text . "</h1>";
     }
 
-    public function addText(string $text)
+    public function setText(string $text)
     {
         $this->text = $text;
     }
