@@ -19,15 +19,15 @@ Design Patterns utilizados:
 ### Comentários (Endpoints + integração tela)
 
 - [x] GET ~/comentarios
-- [ ] POST ~/comentarios
+- [x] POST ~/comentarios
 
 ---
 
 ### Administrativo (Endpoints + integração tela)
 
 - [x] POST ~/postagens
-- [ ] PUT ~/postagens/{id}
-- [ ] DELETE ~/postagens/{id}
+- [x] PUT ~/postagens/{id}
+- [x] DELETE ~/postagens/{id}
 
 ---
 
@@ -39,4 +39,4 @@ Design Patterns utilizados:
 
 ### Tratamento de erro (Controller + tela)
 
-- [ ] 404 - NotFound
+- [x] 404 - NotFound

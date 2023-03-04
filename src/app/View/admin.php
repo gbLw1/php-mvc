@@ -15,8 +15,8 @@
 	<tr>
 		<th><?php echo $postagem->id ?></th>
 		<th><?php echo $postagem->titulo ?></th>
-		<th><a href="http://localhost/teste/?pagina=admin&metodo=change&id=<?php echo $postagem->id ?>">ALTERAÇÃO</a></th>
-		<th><a href="http://localhost/teste/?pagina=admin&metodo=delete&id=<?php echo $postagem->id ?>">DELEÇÃO</a></th>
+		<th><a href="http://localhost/teste/?pagina=admin&metodo=change&id=<?php echo $postagem->id ?>">Alterar</a></th>
+		<th><a href="http://localhost/teste/?pagina=admin&metodo=delete&id=<?php echo $postagem->id ?>">Deletar</a></th>
 	</tr>
 	<?php endforeach ?>
 

@@ -78,7 +78,7 @@ class Postagem
 	{
 		$con = Connection::getConn();
 
-		$sql = "UPDATE postagem SET titsulo = :tit, conteudo = :cont WHERE id = :id";
+		$sql = "UPDATE postagem SET titulo = :tit, conteudo = :cont WHERE id = :id";
 		$sql = $con->prepare($sql);
 		$sql->bindValue(':tit', $params['titulo']);
 		$sql->bindValue(':cont', $params['conteudo']);
@@ -87,8 +87,6 @@ class Postagem
 
 		if ($resultado == 0) {
 			throw new Exception("Falha ao alterar publicação");
-
-			return false;
 		}
 
 		return true;
@@ -105,8 +103,6 @@ class Postagem
 
 		if ($resultado == 0) {
 			throw new Exception("Falha ao deletar publicação");
-
-			return false;
 		}
 
 		return true;

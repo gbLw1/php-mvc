@@ -1,9 +1,9 @@
 <?php
 
-	class ErroController
+class ErroController
+{
+	public function index()
 	{
-		public function index()
-		{
-			echo 'pagina de erro';
-		}
+		echo 'pagina de erro';
 	}
+}

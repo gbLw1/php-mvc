@@ -52,19 +52,23 @@ class AdminController
 
 	public function change($paramId)
 	{
-		$loader = new \Twig\Loader\FilesystemLoader('app/View');
-		$twig = new \Twig\Environment($loader);
-		$template = $twig->load('update.html');
-
 		$post = Postagem::selecionaPorId($paramId);
 
-		$parametros = array();
-		$parametros['id'] = $post->id;
-		$parametros['titulo'] = $post->titulo;
-		$parametros['conteudo'] = $post->conteudo;
+		require_once("app/View/update.php");
 
-		$conteudo = $template->render($parametros);
-		echo $conteudo;
+		// $loader = new \Twig\Loader\FilesystemLoader('app/View');
+		// $twig = new \Twig\Environment($loader);
+		// $template = $twig->load('update.html');
+
+		// $post = Postagem::selecionaPorId($paramId);
+
+		// $parametros = array();
+		// $parametros['id'] = $post->id;
+		// $parametros['titulo'] = $post->titulo;
+		// $parametros['conteudo'] = $post->conteudo;
+
+		// $conteudo = $template->render($parametros);
+		// echo $conteudo;
 	}
 
 	public function update()

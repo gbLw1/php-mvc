@@ -22,6 +22,10 @@
 
 		public static function inserir($reqPost)
 		{
+			if (empty($reqPost['nome']) or empty($reqPost['msg'])) {
+				throw new Exception("Preencha todos os campos");
+			}
+
 			$con = Connection::getConn();
 
 			$sql = "INSERT INTO comentario (nome, mensagem, id_postagem) VALUES (:nom, :msg, :idp)";
