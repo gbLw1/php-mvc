@@ -4,23 +4,28 @@ class AdminController
 {
 	public function index()
 	{
-		$postagens = Postagem::selecionaTodos();
+		try {
+			$postagens = Postagem::selecionaTodos();
 
-		require_once "app/View/admin.php";
-		
+			require_once "app/View/admin.php";
+
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		}
+
 		// 	$loader = new \Twig\Loader\FilesystemLoader('app/View');
 		// 	$twig = new \Twig\Environment($loader);
 		// 	$template = $twig->load('admin.html');
-		
+
 		// 	$objPostagens = Postagem::selecionaTodos();
-		
+
 		// 	$parametros = array();
 		// 	$parametros['postagens'] = $objPostagens;
-		
+
 		// 	$conteudo = $template->render($parametros);
 		// 	echo $conteudo;
 	}
-	
+
 	public function create()
 	{
 		require_once "app/View/create.html";
@@ -42,8 +47,7 @@ class AdminController
 
 			echo '<script>alert("Publicação inserida com sucesso!");</script>';
 			echo '<script>location.href="http://localhost/teste/?pagina=admin&metodo=index"</script>';
-		}
-		catch (Exception $e) {
+		} catch (Exception $e) {
 			echo '<script>alert("' . $e->getMessage() . '");</script>';
 			echo '<script>location.href="http://localhost/teste/?pagina=admin&metodo=create"</script>';
 		}
