@@ -10,10 +10,12 @@ class AdminController
 			require_once "app/View/admin.php";
 
 		} catch (Exception $e) {
-
 			// Implementação do composite pattern utilizado de exemplo
 			// Ao estourar uma exception, permite criar componentes (tags) na tela
 			// E aproveitando para exibir a mensagem da exception de forma customizada.
+
+			$errorComponent = new ErrorHandlerComponent();
+			$errorComponent->handleException($e);
 
 			// criação do título (h1)
 			$title = new TitleComponent("Gerenciador de Conteúdo");
@@ -23,16 +25,10 @@ class AdminController
 				linkRedirect: "?pagina=admin&metodo=create",
 				text: "Criar publicação");
 
-			$exHandler = new ExceptionHandlerComponent(
-				tags: array(
-					$title->display(),
-					$link->display()
-				)
-			);
-
-			$exHandler->handleException($e);
-			$exHandler->addTag("<br><br><hr><br>");
-			$exHandler->display();
+			// adicionando componentes
+			$errorComponent->add($title);
+			$errorComponent->add($link);
+			$errorComponent->display();
 		}
 
 		

@@ -10,13 +10,9 @@ class ErroController
 			linkRedirect: "?pagina=home&metodo=index"
 		);
 
-		$exHandle = new ExceptionHandlerComponent(
-			tags: array(
-				$title->display(),
-				$link->display()
-			)
-		);
-		
-		$exHandle->display();
+		$errorComponent = new ErrorHandlerComponent();
+		$errorComponent->add($title);
+		$errorComponent->add($link);
+		$errorComponent->display();
 	}
 }
