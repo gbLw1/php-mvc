@@ -12,7 +12,7 @@ criando um título para página com a tag html <h1>
 
 */
 
-class TitleComponent implements Component
+class TitleComponentLeaf implements Component
 {
     public function __construct(
         private string $text = "")

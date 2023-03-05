@@ -4,13 +4,13 @@ class ErroController
 {
 	public function index()
 	{
-		$title = new TitleComponent("Ops! a página que você está tentando acessar não existe");
-		$link = new LinkComponent(
+		$title = new TitleComponentLeaf("Ops! a página que você está tentando acessar não existe");
+		$link = new LinkComponentLeaf(
 			text: "Voltar para home",
 			linkRedirect: "?pagina=home&metodo=index"
 		);
 
-		$errorComponent = new ErrorHandlerComponent();
+		$errorComponent = new ErrorHandlerComposite();
 		$errorComponent->add($title);
 		$errorComponent->add($link);
 		$errorComponent->display();

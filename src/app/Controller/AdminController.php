@@ -14,14 +14,14 @@ class AdminController
 			// Ao estourar uma exception, permite criar componentes (tags) na tela
 			// E aproveitando para exibir a mensagem da exception de forma customizada.
 
-			$errorComponent = new ErrorHandlerComponent();
+			$errorComponent = new ErrorHandlerComposite();
 			$errorComponent->handleException($e);
 
 			// criação do título (h1)
-			$title = new TitleComponent("Gerenciador de Conteúdo");
+			$title = new TitleComponentLeaf("Gerenciador de Conteúdo");
 
 			// criação do link de redirecionamento
-			$link = new LinkComponent(
+			$link = new LinkComponentLeaf(
 				linkRedirect: "?pagina=admin&metodo=create",
 				text: "Criar publicação");
 

@@ -6,9 +6,9 @@ require_once 'app/Core/Core.php';
 
 require_once 'lib/Database/Connection.php';
 require_once 'lib/Components/Component.php';
-require_once 'lib/Components/ErrorHandlerComponent.php';
-require_once 'lib/Components/LinkComponent.php';
-require_once 'lib/Components/TitleComponent.php';
+require_once 'lib/Components/ErrorHandlerComposite.php';
+require_once 'lib/Components/LinkComponentLeaf.php';
+require_once 'lib/Components/TitleComponentLeaf.php';
 
 require_once 'app/Controller/HomeController.php';
 require_once 'app/Controller/ErroController.php';

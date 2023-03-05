@@ -16,7 +16,7 @@ obs: a exception será exibida abaixo das tags criadas
 
 */
 
-class ErrorHandlerComponent implements Component
+class ErrorHandlerComposite implements Component
 {
     // o array tags armazenará toda a estrutura do componente
     // criando assim um html customizado para exibição da exception

@@ -13,7 +13,7 @@ atribuidos nos métodos addText(str) e addRedirectLink(str).
 
 */
 
-class LinkComponent implements Component
+class LinkComponentLeaf implements Component
 {
     public function __construct(
         private string $text = "",
